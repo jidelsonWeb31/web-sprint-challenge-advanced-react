@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
+import useForm from "./hooks/useForm";
 
 import "./App.css";
 
@@ -22,6 +23,13 @@ function App() {
   const removeFromCart = (plant) => {
     setCart(cart.filter((p) => p.id !== plant.id));
   };
+
+//  const [firstName, setFirstName]= useForm("");
+//     const [lastName, setLastName]= useForm("");
+//     const [address, setAddress]= useForm("");
+//     const [city, setCity]= useForm("");
+//     const [state, setState]= useForm("");
+//     const [zip, setZip]= useForm("");
 
 
 
@@ -63,7 +71,10 @@ function App() {
             />
           )}
         />
-        <Route path="/checkout" component={CheckoutForm} />
+        <Route path="/checkout" 
+        component={CheckoutForm} 
+       
+        />
       </Router>
     </div>
   );

@@ -12,11 +12,11 @@ import useLocalStorage from "./localStorage";
 
 
 const useForm = (initialValue) => {
-    // const [values, setValues] = useLocalStorage(key, initialValue);
-   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+   
+    // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [values, setValues] = useState(initialValue);
-
     
+   
     const handleChanges = e => {
         const {name, value} = e.target;
       setValues({
@@ -25,18 +25,15 @@ const useForm = (initialValue) => {
       });
     };
     
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setShowSuccessMessage(true);
-      };
+    
      
   
   
-    return {
+    return [
         values, 
-        handleChanges,
-        handleSubmit 
-    }
+        handleChanges
+    ]
+    
   };
   
   export default useForm;

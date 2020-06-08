@@ -16,14 +16,22 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
  
-  const {
-    handleChanges, 
-    handleSubmit, 
-    values} = useForm(initialValue)
+  const [
+     
+    values,
+    handleChanges ]= useForm(initialValue)
 
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  
+  
     
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  return (
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowSuccessMessage(true);
+    
+  };
+
+    return (
     <>
       <form onSubmit={e => handleSubmit(e)}>
         <h2>Checkout Form</h2>
@@ -33,7 +41,7 @@ const CheckoutForm = (props) => {
             className="firstName-text"
             name="firstName"
             value={values.firstName}
-            onChange={e => handleChanges(e)}
+            onChange={handleChanges}
             id= "firstName"
           />
         </label>
@@ -43,7 +51,7 @@ const CheckoutForm = (props) => {
             className="lastName-text"
             name="lastName"
             value={values.lastName}
-            onChange={e => handleChanges(e)}
+            onChange={handleChanges}
             id="lastName"
           />
         </label>
@@ -53,7 +61,7 @@ const CheckoutForm = (props) => {
             className="address-text"
             name="address"
             value={values.address}
-            onChange={e => handleChanges(e)}
+            onChange={handleChanges}
             id="address"
           />
         </label>
@@ -63,7 +71,7 @@ const CheckoutForm = (props) => {
           className="city-text"
            name="city" 
            value={values.city} 
-           onChange={e => handleChanges(e)} 
+           onChange={handleChanges} 
            id="city"
            />
         </label>
@@ -73,7 +81,7 @@ const CheckoutForm = (props) => {
           className="state-text" 
           name="state" 
           value={values.state} 
-          onChange={e => handleChanges(e)} 
+          onChange={handleChanges} 
           id="state"
           />
         </label>
@@ -83,7 +91,7 @@ const CheckoutForm = (props) => {
           className="zip-text"
           name="zip" 
           value={values.zip} 
-          onChange={e => handleChanges(e)} 
+          onChange={handleChanges} 
           id="zip"
           />
         </label>
