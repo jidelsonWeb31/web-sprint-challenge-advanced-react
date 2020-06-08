@@ -16,27 +16,12 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
  
-
-
-  // const [firstname, setFirstName, handleFirstName] = useForm("");
-  // const [lastName, setLastName, handleLastName] = useForm("");
-  // const [address, setAddress, handleAddress] = useForm("");
-  // const [city, setCity, handleCity] = useForm("");
-  // const [state, setState, handleState] = useForm("");
-  // const [zip, setZip, handleZip] = useForm("");
-  // const [showSuccessMessage, setShowSuccessMessage, handleShowSuccessMessage] = useForm("");
-  // const [values, setValues, handleValues] = useForm("");
-  
-
   const {
     handleChanges, 
     handleSubmit, 
-    values} = useForm(submit)
+    values} = useForm(initialValue)
 
-    function submit() {
-      console.log("submitted successfully");
-    }
-
+    
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   return (
     <>
@@ -48,7 +33,7 @@ const CheckoutForm = (props) => {
             className="firstName-text"
             name="firstName"
             value={values.firstName}
-            onChange={handleChanges}
+            onChange={e => handleChanges(e)}
             id= "firstName"
           />
         </label>
@@ -58,7 +43,7 @@ const CheckoutForm = (props) => {
             className="lastName-text"
             name="lastName"
             value={values.lastName}
-            onChange={handleChanges}
+            onChange={e => handleChanges(e)}
             id="lastName"
           />
         </label>
@@ -68,7 +53,7 @@ const CheckoutForm = (props) => {
             className="address-text"
             name="address"
             value={values.address}
-            onChange={handleChanges}
+            onChange={e => handleChanges(e)}
             id="address"
           />
         </label>
@@ -78,7 +63,7 @@ const CheckoutForm = (props) => {
           className="city-text"
            name="city" 
            value={values.city} 
-           onChange={handleChanges} 
+           onChange={e => handleChanges(e)} 
            id="city"
            />
         </label>
@@ -88,7 +73,7 @@ const CheckoutForm = (props) => {
           className="state-text" 
           name="state" 
           value={values.state} 
-          onChange={handleChanges} 
+          onChange={e => handleChanges(e)} 
           id="state"
           />
         </label>
@@ -98,7 +83,7 @@ const CheckoutForm = (props) => {
           className="zip-text"
           name="zip" 
           value={values.zip} 
-          onChange={handleChanges} 
+          onChange={e => handleChanges(e)} 
           id="zip"
           />
         </label>

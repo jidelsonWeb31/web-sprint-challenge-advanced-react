@@ -7,7 +7,7 @@ import CheckoutForm from "./components/CheckoutForm";
 
 import "./App.css";
 
-import axios from 'axios';
+
 
 function App() {
   // array of plants that have been added to the cart
@@ -23,9 +23,7 @@ function App() {
     setCart(cart.filter((p) => p.id !== plant.id));
   };
 
-  useEffect(() => {
 
-  })
 
   return (
     <div>
