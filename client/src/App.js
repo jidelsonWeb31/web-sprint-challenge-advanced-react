@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 import PlantList from "./components/PlantList";
@@ -6,6 +6,8 @@ import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
 import "./App.css";
+
+import axios from 'axios';
 
 function App() {
   // array of plants that have been added to the cart
@@ -20,6 +22,10 @@ function App() {
   const removeFromCart = (plant) => {
     setCart(cart.filter((p) => p.id !== plant.id));
   };
+
+  useEffect(() => {
+
+  })
 
   return (
     <div>
